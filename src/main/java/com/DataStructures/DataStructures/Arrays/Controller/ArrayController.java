@@ -11,4 +11,9 @@ public class ArrayController {
     @Autowired
     ArrayService arrayService;
 
+    @RequestMapping(value = "/searching_LinearSearch")
+    void LinearSearch()
+    {
+        arrayService.linearSearch();
+    }
 }
