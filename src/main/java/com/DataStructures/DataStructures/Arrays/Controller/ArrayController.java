@@ -11,9 +11,46 @@ public class ArrayController {
     @Autowired
     ArrayService arrayService;
 
-    @RequestMapping(value = "/searching_LinearSearch")
+
+    /**
+     * Linear Search In Array
+     * Time Complexity of O(n)
+     */
+    @RequestMapping(value = "/searching_linear_search")
     void LinearSearch()
     {
         arrayService.linearSearch();
+    }
+
+
+
+    /**
+     * Bubble Sort
+     *
+     * Keep swapping elements that are not in their right location till the array is sorted.
+     *
+     * O (n)
+      */
+    @RequestMapping(value = "/sort_bubble_sort")
+    void bubbleSort()
+    {
+        arrayService.bubbleSort();
+    }
+
+
+
+
+    /**
+     * Selection Sort
+     *
+     * Find the minimum element in each run of the array and swap it with the element at the current index is compared.
+     *
+     * Worst Time Complexity
+     * O(n^2)
+     */
+    @RequestMapping(value = "/sort_selection_sort")
+    public void selectionSort()
+    {
+        arrayService.selectionSort();
     }
 }
