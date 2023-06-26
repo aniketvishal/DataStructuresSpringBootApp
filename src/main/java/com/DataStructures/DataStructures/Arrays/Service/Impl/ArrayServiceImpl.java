@@ -120,7 +120,7 @@ public class ArrayServiceImpl implements ArrayService {
      *
      * Keep swapping elements that are not in their right location till the array is sorted.
      *
-     * O (n)
+     * O (n^2)
      */
     @Override
     public void bubbleSort()
@@ -179,6 +179,45 @@ public class ArrayServiceImpl implements ArrayService {
 //    }
 
 
+    /**
+     * Insertion Sort
+     *
+     * In every run, compare it with the predecessor. If the current element is not in the correct location,
+     * keep shifting the predecessor subarray till the correct index for the element is found.
+     *
+     * O(n^2)
+     */
+    @Override
+    public void insertionSort(){
+        System.out.println("Enter the size of array :");
+        int size=scanner.nextInt();
+        int[] arrayToSort=new int[size];
+        System.out.println("Enter the values in array :");
+        for(int iteratorI=0;iteratorI<size;iteratorI++)
+        {
+            arrayToSort[iteratorI]=scanner.nextInt();
+        }
+        display(arrayToSort);
+        System.out.println("Now Sorting Starts :");
+        insertionSortRcursion(arrayToSort,arrayToSort.length);
+        display(arrayToSort);
+    }
 
+    void insertionSortRcursion(int arr[], int n)
+    {
+        if (n <= 1)                             //passes are done
+        {
+            return;
+        }
+        insertionSortRcursion( arr, n-1 );        //one element sorted, sort the remaining array
+        int last = arr[n-1];                        //last element of the array
+        int j = n-2;                                //correct index of last element of the array
+        while (j >= 0 && arr[j] > last)                 //find the correct index of the last element
+        {
+            arr[j+1] = arr[j];                          //shift section of sorted elements upwards by one element if correct index isn't found
+            j--;
+        }
+        arr[j+1] = last;                            //set the last element at its correct index
+    }
 
 }

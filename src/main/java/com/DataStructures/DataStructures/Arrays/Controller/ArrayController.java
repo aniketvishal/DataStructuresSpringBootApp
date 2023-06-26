@@ -29,8 +29,9 @@ public class ArrayController {
      *
      * Keep swapping elements that are not in their right location till the array is sorted.
      *
-     * O (n)
-      */
+     * Worst Time Complexity
+     * O (n^2)
+     */
     @RequestMapping(value = "/sort_bubble_sort")
     void bubbleSort()
     {
@@ -53,4 +54,22 @@ public class ArrayController {
     {
         arrayService.selectionSort();
     }
+
+
+    /**
+     * Insertion Sort
+     *
+     * In every run, compare it with the predecessor. If the current element is not in the correct location,
+     * keep shifting the predecessor subarray till the correct index for the element is found.
+     *
+     * O(n^2)
+     */
+    @RequestMapping(value = "/sort_insertion_sort")
+    public void insertionSort()
+    {
+        arrayService.insertionSort();
+    }
+
+
+    
 }
