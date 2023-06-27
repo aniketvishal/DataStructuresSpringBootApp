@@ -11,10 +11,16 @@ public class ArrayController {
     @Autowired
     ArrayService arrayService;
 
+//         GO TO ANY LINK IN COMMENT AND Ctrl+B to open link
+
     /**
+     *
      * Also Go through this
+     *
      * @links
      * <a href="https://www.baeldung.com/java-sorting">Predefined sorting functions in Java</a>
+     * <a href="https://www.geeksforgeeks.org/sorting-algorithms/">ARRAY SORTING ALORITHMS</a>
+     *
      */
 
 
@@ -92,6 +98,8 @@ public class ArrayController {
      *  then one by one delete the root node of the Max-heap and replace it with the last node in the heap and then heapify the root of the heap.
      *  Repeat this process until size of heap is greater than 1.
      *
+     *  O(N.log(N))
+     *
      *
      * @links
      * <a href="https://www.youtube.com/watch?v=uuot9ItgTEI"> Introduction to Heap Tree with examples | Max Min Heap</a>
@@ -103,5 +111,19 @@ public class ArrayController {
      */
     @RequestMapping(value = "/sort_heap_sort")
     public void heapSort(){arrayService.heapSort();}
+
+
+    /**
+     * MERGE SORT
+     *
+     * @links
+     * <a href="https://www.geeksforgeeks.org/merge-sort/">MERGE SORT</a>
+     *
+     * θ(N.log(N))
+     */
+    @RequestMapping(value = "/sort_merge_sort")
+    public void mergeSort(){
+        arrayService.mergeSort();
+    }
 
 }
