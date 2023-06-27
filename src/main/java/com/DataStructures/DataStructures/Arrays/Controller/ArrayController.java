@@ -71,5 +71,31 @@ public class ArrayController {
     }
 
 
-    
+    /**
+     * HEAP SORT
+     *     let a array[]={23,34,45,67,78,89}
+     *
+     *                         |-                     [0]{23}           <-- root node in an array is always on index 0
+     *                         |                     /      \
+     * height of tree=  log(N) |              [1]{34}        [2]{45}   <-- index of parent of a chile node at index M = (M-1)/2 ,index of last rightmost parent node =((N-1)-1)/2
+     *                         |              /    \         /
+     *                         |-         [3]{67}  [4]{78}  [5]{89}     <--  number of leaf nodes = N/2 (6/2 = 3)
+     *                                                                           ,index of last leaf node = N-1 (6-1=5)
+     *
+     * first convert the array into heap data structure using heapify,
+     *  then one by one delete the root node of the Max-heap and replace it with the last node in the heap and then heapify the root of the heap.
+     *  Repeat this process until size of heap is greater than 1.
+     *
+     *
+     * @links
+     * <a href="https://www.youtube.com/watch?v=uuot9ItgTEI"> Introduction to Heap Tree with examples | Max Min Heap</a>
+     * <a href="https://www.youtube.com/watch?v=KzXpfxRzVQM">Insertion in Heap Tree | Max-Heap & Min-Heap Creation | Time Complexities</a>
+     * <a href="https://www.youtube.com/watch?v=8noP3YjjJCM">Build Heap in O(n) time complexity | Heapify Method | Full Derivation with example</a>
+     * <a href="https://www.youtube.com/watch?v=4GsxDWMI7tQ">Deletion in Heap tree | Time complexity</a>
+     * <a href="https://www.youtube.com/watch?v=nJ6FdAIr_6g">Heap sort with Example | Heapify Method</a>
+     * **   <a href="https://www.youtube.com/watch?v=awhtt1DMIR4">Build Heap in O(n) Time Complexity 🔥 | Heapify in heap data structure & Algorithms Hindi Hello world</a>
+     */
+    @RequestMapping(value = "/sort_heap_sort")
+    public void heapSort(){arrayService.heapSort();}
+
 }
