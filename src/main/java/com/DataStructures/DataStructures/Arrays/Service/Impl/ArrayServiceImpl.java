@@ -1,5 +1,6 @@
 package com.DataStructures.DataStructures.Arrays.Service.Impl;
 
+import com.DataStructures.DataStructures.Arrays.Constant.ArraysConstats;
 import com.DataStructures.DataStructures.Arrays.Service.ArrayService;
 import org.springframework.stereotype.Service;
 import java.util.*;
@@ -263,10 +264,10 @@ public class ArrayServiceImpl implements ArrayService {
      */
     @Override
     public void heapSort(){
-        System.out.println("Enter the size of array :");
+        System.out.println(ArraysConstats.ArrayConstantEnum.ENTER_ARRAY_SIZE);
         int size=scanner.nextInt();
         int[] arrayToSort=new int[size];
-        System.out.println("Enter the values in array :");
+        System.out.println(ArraysConstats.ArrayConstantEnum.ENTER_ELEMENTS_IN_ARRAY);
         for(int iteratorI=0;iteratorI<size;iteratorI++)
         {
             arrayToSort[iteratorI]=scanner.nextInt();
