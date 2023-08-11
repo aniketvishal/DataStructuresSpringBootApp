@@ -6,7 +6,6 @@ public interface ArrayService {
     void bubbleSort();
     void insertionSort();
     void heapSort();
-
     void mergeSort();
 }
 
